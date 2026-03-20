@@ -80,34 +80,37 @@ function App() {
   <div className="project-card reveal">
     <h3>DesertDinoDash - D3- 2D Unity Game</h3>
     <ul className="project-list">
-      <li>Developed a 2D game in Unity featuring collision detection, obstacle behavior, and level progression [cite: 24, 25]</li>
-      <li>Implemented player movement mechanics, scoring system, and increasing difficulty across levels [cite: 25]</li>
+      <li>Developed a 2D game in Unity featuring collision detection, obstacle behavior, and level progression</li>
+      <li>Implemented player movement mechanics, scoring system, and increasing difficulty across levels</li>
     </ul>
-    <p className="tech-text">Technologies: Unity, C# [cite: 24, 25]</p>
+    <p className="tech-text">Technologies: Unity, C# </p>
   </div>
 
   {/* MedRec */}
   <div className="project-card reveal">
     <h3>MedRec – Medical Record Management System</h3>
     <ul className="project-list">
-      <li>Developed a secure full-stack medical record management system using React and FastAPI [cite: 17, 18]</li>
-      <li>Designed RESTful APIs for efficient data storage and retrieval [cite: 18]</li>
-      <li>Implemented data visualization to analyze long-term health trends [cite: 18]</li>
-      <li>Improved record accessibility and reduced manual tracking [cite: 17, 18]</li>
+      <li>Developed a secure full-stack medical record management system using React and FastAPI</li>
+      <li>Designed RESTful APIs for efficient data storage and retrieval</li>
+      <li>Implemented data visualization to analyze long-term health trends </li>
+      <li>Improved record accessibility and reduced manual tracking 
+
+
+      </li>
     </ul>
-    <p className="tech-text">Technologies: React, FastAPI, Python, SQL [cite: 18]</p>
+    <p className="tech-text">Technologies: React, FastAPI, Python, SQL </p>
   </div>
 
   {/* AirSential */}
   <div className="project-card reveal">
     <h3>AirSential – IoT Air Quality Monitoring System</h3>
     <ul className="project-list">
-      <li>Designed and built an IoT-based air quality monitoring system using Arduino and C++ [cite: 20]</li>
-      <li>Integrated gas sensors to detect hazardous leaks and trigger real-time alerts [cite: 20]</li>
-      <li>Improved response time for unsafe air conditions through automated notifications [cite: 21]</li>
-      <li>Selected for IDEATHON conducted by the University of Mumbai for innovative IoT solution [cite: 21]</li>
+      <li>Designed and built an IoT-based air quality monitoring system using Arduino and C++</li>
+      <li>Integrated gas sensors to detect hazardous leaks and trigger real-time alerts</li>
+      <li>Improved response time for unsafe air conditions through automated notifications </li>
+      <li>Selected for IDEATHON conducted by the University of Mumbai for innovative IoT solution </li>
     </ul>
-    <p className="tech-text">Technologies: Arduino, C++, Gas Sensors, IoT [cite: 20]</p>
+    <p className="tech-text">Technologies: Arduino, C++, Gas Sensors, IoT</p>
   </div>
 
   {/* Customer Segmentation */}
@@ -118,7 +121,7 @@ function App() {
       <li>Identified distinct customer groups to support targeted marketing strategies</li>
       <li>Visualized clustering results for improved business insights</li>
     </ul>
-    <p className="tech-text">Technologies: Python, Scikit-learn, Pandas, Matplotlib</p>
+    <p className="tech-text">Technologies: TypeScript</p>
   </div>
 </div>
         </div>
