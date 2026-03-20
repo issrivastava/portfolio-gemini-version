@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Glacial Indifference', sans-serif;
-  cursor: none; /* Hide default cursor to use custom one */
+  cursor: none; 
 }
 
 html { scroll-behavior: smooth; }
@@ -14,20 +14,20 @@ html { scroll-behavior: smooth; }
 .custom-cursor {
   width: 20px;
   height: 20px;
-  border: 2px solid black;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
   border-radius: 50%;
   position: absolute;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.1s ease;
-  background-color: rgba(255, 255, 255, 0.5);
+  transition: transform 0.1s ease-out;
 }
 
-/* Smooth Reveal Animation */
+/* Animations */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
 .reveal.show {
@@ -35,7 +35,7 @@ html { scroll-behavior: smooth; }
   transform: translateY(0);
 }
 
-/* Header & Navigation */
+/* Header */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -43,17 +43,17 @@ html { scroll-behavior: smooth; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 150px;
+  height: 140px;
 }
 
-.header-left { padding: 40px 0 0 60px; }
-.header-left h1 { font-size: 3rem; font-weight: 700; }
+.header-left { padding: 35px 60px; }
+.header-left h1 { font-size: 2.8rem; font-weight: 700; color: #1a1a1a; }
 
 .header-right-blob {
   background-color: #ffcc29;
   width: 45%;
-  height: 130px;
-  border-bottom-left-radius: 110px;
+  height: 120px;
+  border-bottom-left-radius: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,53 +66,80 @@ html { scroll-behavior: smooth; }
   font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: opacity 0.3s;
 }
 
-.nav-menu a:hover {
-  letter-spacing: 2px;
-  color: #fff;
+.nav-menu a:hover { opacity: 0.6; }
+
+/* Content Sections */
+.content-yellow {
+  background-color: #ffcc29;
+  margin: 0 25px 25px 25px;
+  min-height: calc(100vh - 170px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  border-radius: 30px; /* Smoother outer corners */
 }
 
-/* 3D Action Buttons with smoother hover */
+/* THE SMOOTH BOXES */
+.white-content-box, .project-card {
+  background: white;
+  padding: 40px;
+  border: none; /* Border removed */
+  border-radius: 20px; /* Rounded for smoothness */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow instead of border */
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+/* Smooth Buttons */
 .hero-btn, .message-btn {
   background: white;
   color: black;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  padding: 15px 50px;
-  border: 2px solid black;
-  box-shadow: 6px 6px 0px rgba(0,0,0,1);
-  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.hero-btn:hover, .message-btn:hover {
-  transform: scale(1.05) translate(-4px, -4px);
-  box-shadow: 12px 12px 0px rgba(0,0,0,1);
-  background-color: #000;
-  color: #fff;
-}
-
-/* Grid and Containers */
-.content-yellow {
-  background-color: #ffcc29;
-  margin: 0 30px 30px 30px;
-  min-height: calc(100vh - 180px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 40px;
-}
-
-.white-content-box, .project-card {
-  background: white;
-  padding: 40px;
-  border: 1px solid black;
+  padding: 15px 45px;
+  border: none;
+  border-radius: 50px; /* Pill shape for smoothness */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.project-card:hover {
-  transform: rotate(-1deg);
-  border-width: 3px;
+.hero-btn:hover, .message-btn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Typography */
+.welcome-text, .section-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.white-content-box p { font-size: 1.3rem; line-height: 1.7; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .site-header { flex-direction: column; height: auto; }
+  .header-right-blob { width: 100%; border-radius: 0; height: 60px; }
+  .header-left { padding: 20px; text-align: center; }
+  .content-yellow { margin: 10px; border-radius: 15px; }
 }
