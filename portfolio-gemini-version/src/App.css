@@ -1,19 +1,41 @@
-/* Base Reset */
+@import url('https://fonts.cdnfonts.com/css/glacial-indifference');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Glacial Indifference', sans-serif;
+  cursor: none; /* Hide default cursor to use custom one */
 }
 
 html { scroll-behavior: smooth; }
 
-.main-container {
-  width: 100%;
-  background-color: white;
+/* Custom Cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Header: Split White/Yellow */
+/* Smooth Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header & Navigation */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -25,8 +47,7 @@ html { scroll-behavior: smooth; }
 }
 
 .header-left { padding: 40px 0 0 60px; }
-.header-left h1 { font-size: 3rem; font-weight: 400; letter-spacing: -1px; }
-.header-left p { font-size: 1.2rem; color: #333; }
+.header-left h1 { font-size: 3rem; font-weight: 700; }
 
 .header-right-blob {
   background-color: #ffcc29;
@@ -43,10 +64,37 @@ html { scroll-behavior: smooth; }
   color: black;
   margin: 0 15px;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
-/* Yellow Main Sections */
+.nav-menu a:hover {
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+/* 3D Action Buttons with smoother hover */
+.hero-btn, .message-btn {
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 15px 50px;
+  border: 2px solid black;
+  box-shadow: 6px 6px 0px rgba(0,0,0,1);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-btn:hover, .message-btn:hover {
+  transform: scale(1.05) translate(-4px, -4px);
+  box-shadow: 12px 12px 0px rgba(0,0,0,1);
+  background-color: #000;
+  color: #fff;
+}
+
+/* Grid and Containers */
 .content-yellow {
   background-color: #ffcc29;
   margin: 0 30px 30px 30px;
@@ -57,74 +105,14 @@ html { scroll-behavior: smooth; }
   padding: 60px 40px;
 }
 
-.content-inner {
-  width: 100%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.welcome-text, .section-title {
-  font-size: 3.5rem;
-  font-weight: 400;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-/* White Boxes */
 .white-content-box, .project-card {
   background: white;
   padding: 40px;
   border: 1px solid black;
-  width: 100%;
+  transition: 0.3s;
 }
 
-.white-content-box p {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  width: 100%;
-}
-
-.project-card h3 { margin-bottom: 15px; font-size: 1.5rem; }
-.project-card p { font-size: 1.1rem; line-height: 1.5; }
-
-/* 3D Action Buttons */
-.hero-button-container { display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; }
-
-.hero-btn, .message-btn {
-  background: white;
-  color: black;
-  text-decoration: none;
-  font-size: 1.3rem;
-  padding: 15px 50px;
-  border: 2px solid black;
-  box-shadow: 6px 6px 0px rgba(0,0,0,1);
-  cursor: pointer;
-  transition: 0.1s;
-}
-
-.hero-btn:active, .message-btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 3px 3px 0px rgba(0,0,0,1);
-}
-
-.contact-details p { font-size: 1.6rem; text-align: center; margin-bottom: 10px; }
-
-/* Responsive Styles */
-@media (max-width: 900px) {
-  .site-header { flex-direction: column; height: auto; }
-  .header-right-blob { width: 100%; border-radius: 0; height: 60px; }
-  .header-left { padding: 20px; text-align: center; }
-  .welcome-text, .section-title { font-size: 2.2rem; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .hero-btn { width: 100%; text-align: center; }
+.project-card:hover {
+  transform: rotate(-1deg);
+  border-width: 3px;
 }

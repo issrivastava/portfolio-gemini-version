@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const emailAddress = "sagarikasrivastava46@gmail.com";
+  const emailAddress = "sagarikasrivastava46@gmail.com"; // 
+
+  useEffect(() => {
+    // Reveal animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const hiddenElements = document.querySelectorAll('.reveal');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Custom Cursor Logic
+    const cursor = document.querySelector('.custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;");
+    });
+  }, []);
 
   const handleResumeDownload = () => {
-    // This looks for 'resume.pdf' in your project's 'public' folder
     const link = document.createElement('a');
     link.href = process.env.PUBLIC_URL + '/resume.pdf'; 
     link.download = 'Sagarika_Srivastava_Resume.pdf';
@@ -14,17 +33,14 @@ function App() {
     document.body.removeChild(link);
   };
 
-  const openEmailPrompt = () => {
-    window.location.href = `mailto:${emailAddress}`;
-  };
-
   return (
     <div className="main-container">
-      {/* Header with Name and Nav Blob */}
+      <div className="custom-cursor"></div>
+      
       <header className="site-header">
         <div className="header-left">
-          <h1>Sagarika Srivastava</h1>
-          <p>Mumbai, India</p>
+          <h1>Sagarika Srivastava</h1> {/* [cite: 1, 8, 15, 26] */}
+          <p>Mumbai, India</p> {/* [cite: 3, 9, 16, 27] */}
         </div>
         <div className="header-right-blob">
           <nav className="nav-menu">
@@ -36,9 +52,8 @@ function App() {
         </div>
       </header>
 
-      {/* Page 1: Home */}
       <section id="home" className="content-yellow hero-page">
-        <div className="content-inner">
+        <div className="content-inner reveal">
           <h2 className="welcome-text">Welcome to my website</h2>
           <div className="hero-button-container">
             <a href="https://github.com/issrivastava" target="_blank" rel="noreferrer" className="hero-btn">GitHub</a>
@@ -48,50 +63,45 @@ function App() {
         </div>
       </section>
 
-      {/* Page 2: About Me */}
       <section id="about" className="content-yellow">
-        <div className="content-inner">
+        <div className="content-inner reveal">
           <h2 className="section-title">About Me</h2>
           <div className="white-content-box">
-            <p>Hey! I'm a Computer Engineering student at Rizvi College of Engineering, Mumbai, who enjoys building cool things with code[cite: 12].</p>
-            <p>I've worked on projects ranging from full-stack web apps using React and FastAPI to IoT systems and machine learning models[cite: 13].</p>
-            <p>I'm always curious to learn new tech and currently looking for opportunities to grow as a developer and work on impactful projects[cite: 14].</p>
+            <p>Hey! I'm a Computer Engineering student at Rizvi College of Engineering, Mumbai, who enjoys building cool things with code. [cite: 12]</p>
+            <p>I've worked on projects ranging from full-stack web apps using React and FastAPI to IoT systems and machine learning models. [cite: 13]</p>
           </div>
         </div>
       </section>
 
-      {/* Page 3: Projects */}
       <section id="projects" className="content-yellow">
-        <div className="content-inner">
+        <div className="content-inner reveal">
           <h2 className="section-title">Projects</h2>
           <div className="projects-grid">
             <div className="project-card">
-              <h3>MedRec – Medical Record Management System</h3>
-              <p>A full-stack web app to securely store and manage medical records[cite: 17]. Built REST APIs with FastAPI and used React for a clean frontend[cite: 18].</p>
+              <h3>MedRec</h3> {/* [cite: 17] */}
+              <p>Medical Record Management System using React and FastAPI. [cite: 18]</p>
             </div>
             <div className="project-card">
-              <h3>AirSential – IoT Air Quality Monitoring System</h3>
-              <p>An Arduino-based system that detects hazardous gases and sends real-time alerts[cite: 20]. Selected for a University of Mumbai Ideathon[cite: 21].</p>
+              <h3>AirSential</h3> {/* [cite: 20] */}
+              <p>IoT Air Quality Monitoring System selected for a University of Mumbai Ideathon. [cite: 21]</p>
             </div>
             <div className="project-card">
-              <h3>DesertDino Dash – 2D Unity Game</h3>
-              <p>A fun 2D game built in Unity with player movement, obstacle mechanics, and collision detection[cite: 24, 25].</p>
+              <h3>DesertDino Dash</h3> {/* [cite: 24] */}
+              <p>2D Unity Game with engaging obstacle mechanics. [cite: 25]</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Page 4: Contact Me */}
       <section id="contact" className="content-yellow">
-        <div className="content-inner">
+        <div className="content-inner reveal">
           <h2 className="section-title">Contact Me</h2>
           <div className="white-content-box contact-box">
             <div className="contact-details">
-              <p>Email: {emailAddress}</p>
+              <p>Email: {emailAddress}</p> {/*  */}
               <p>LinkedIn: linkedin.com/in/issrivastava46</p>
-              <p>Phone: +91 9284510103</p>
             </div>
-            <button onClick={openEmailPrompt} className="message-btn">Message</button>
+            <button onClick={() => window.location.href = `mailto:${emailAddress}`} className="message-btn">Message</button>
           </div>
         </div>
       </section>
