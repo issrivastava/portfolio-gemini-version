@@ -75,20 +75,52 @@ function App() {
       <section id="projects" className="content-yellow">
         <div className="content-inner reveal">
           <h2 className="section-title">Projects</h2>
-          <div className="projects-grid">
-            <div className="project-card">
-              <h3>MedRec</h3>
-              <p>Medical Record Management System using React and FastAPI.</p>
-            </div>
-            <div className="project-card">
-              <h3>AirSential</h3>
-              <p>IoT Air Quality Monitoring System selected for a University of Mumbai Ideathon.</p>
-            </div>
-            <div className="project-card">
-              <h3>DesertDino Dash</h3>
-              <p>2D Unity Game with player movement and obstacle mechanics.</p>
-            </div>
-          </div>
+         <div className="projects-grid">
+  {/* DesertDinoDash */}
+  <div className="project-card reveal">
+    <h3>DesertDinoDash - D3- 2D Unity Game</h3>
+    <ul className="project-list">
+      <li>Developed a 2D game in Unity featuring collision detection, obstacle behavior, and level progression [cite: 24, 25]</li>
+      <li>Implemented player movement mechanics, scoring system, and increasing difficulty across levels [cite: 25]</li>
+    </ul>
+    <p className="tech-text">Technologies: Unity, C# [cite: 24, 25]</p>
+  </div>
+
+  {/* MedRec */}
+  <div className="project-card reveal">
+    <h3>MedRec – Medical Record Management System</h3>
+    <ul className="project-list">
+      <li>Developed a secure full-stack medical record management system using React and FastAPI [cite: 17, 18]</li>
+      <li>Designed RESTful APIs for efficient data storage and retrieval [cite: 18]</li>
+      <li>Implemented data visualization to analyze long-term health trends [cite: 18]</li>
+      <li>Improved record accessibility and reduced manual tracking [cite: 17, 18]</li>
+    </ul>
+    <p className="tech-text">Technologies: React, FastAPI, Python, SQL [cite: 18]</p>
+  </div>
+
+  {/* AirSential */}
+  <div className="project-card reveal">
+    <h3>AirSential – IoT Air Quality Monitoring System</h3>
+    <ul className="project-list">
+      <li>Designed and built an IoT-based air quality monitoring system using Arduino and C++ [cite: 20]</li>
+      <li>Integrated gas sensors to detect hazardous leaks and trigger real-time alerts [cite: 20]</li>
+      <li>Improved response time for unsafe air conditions through automated notifications [cite: 21]</li>
+      <li>Selected for IDEATHON conducted by the University of Mumbai for innovative IoT solution [cite: 21]</li>
+    </ul>
+    <p className="tech-text">Technologies: Arduino, C++, Gas Sensors, IoT [cite: 20]</p>
+  </div>
+
+  {/* Customer Segmentation */}
+  <div className="project-card reveal">
+    <h3>Customer Segmentation using K-Means Clustering</h3>
+    <ul className="project-list">
+      <li>Implemented K-Means clustering to segment customers based on behavioral data</li>
+      <li>Identified distinct customer groups to support targeted marketing strategies</li>
+      <li>Visualized clustering results for improved business insights</li>
+    </ul>
+    <p className="tech-text">Technologies: Python, Scikit-learn, Pandas, Matplotlib</p>
+  </div>
+</div>
         </div>
       </section>
 
