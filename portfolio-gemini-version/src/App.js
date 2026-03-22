@@ -83,16 +83,17 @@ function App() {
         <h3>Bachelor of Engineering (B.E) in Computer Engineering</h3>
         <span className="education-date">2023 — 2027</span>
       </div>
-      <p className="institution">Rizvi College of Engineering, Mumbai</p>
+      <p className="institution">Rizvi College of Engineering, Bandra West, Mumbai, India</p>
+      <p>CGPA: 7.67</p>
       </div>
 
     {/* High School - Added this card */}
     <div className="white-content-box education-card" style={{ marginTop: '30px' }}>
       <div className="education-header">
-        <h3>10th Grade</h3>
+        <h3>10th Grade - 92.2% </h3>
         <span className="education-date">2009 — 2020</span>
       </div>
-      <p className="institution">St. Joseph's High School (CBSE)</p>
+      <p className="institution">St. Joseph's High School (CBSE), Navi Mumbai, India</p>
      </div>
   </div>
 </section>
@@ -110,7 +111,9 @@ function App() {
           <span>C++</span>
           <span>C#</span>
           <span>JavaScript</span>
+          <span>TypeScript</span>
           <span>SQL</span>
+          <span>LaTeX</span>
         </div>
       </div>
 
@@ -140,7 +143,6 @@ function App() {
           <span>Arduino</span>
           <span>ESP32</span>
           <span>Unity 2D</span>
-          <span>Embedded Systems</span>
         </div>
       </div>
     </div>
