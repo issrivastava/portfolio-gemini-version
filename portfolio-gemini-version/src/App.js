@@ -80,20 +80,20 @@ function App() {
     {/* Engineering Degree */}
     <div className="white-content-box education-card">
       <div className="education-header">
-        <h3>Bachelor of Engineering (B.E) in Computer Engineering</h3>
+        <h3>Rizvi College of Engineering, Bandra West, Mumbai, India</h3>
         <span className="education-date">2023 — 2027</span>
+        <p>Bachelor of Engineering (B.E) in Computer Engineering</p>
       </div>
-      <p className="institution">Rizvi College of Engineering, Bandra West, Mumbai, India</p>
       <p>CGPA: 7.67</p>
       </div>
 
     {/* High School - Added this card */}
     <div className="white-content-box education-card" style={{ marginTop: '30px' }}>
       <div className="education-header">
-        <h3>10th Grade - 92.2% </h3>
+        <h3>St. Joseph's High School (CBSE), Navi Mumbai, India</h3>
         <span className="education-date">2009 — 2020</span>
       </div>
-      <p className="institution">St. Joseph's High School (CBSE), Navi Mumbai, India</p>
+      <p>10th Grade: 92.2% </p>
      </div>
   </div>
 </section>
