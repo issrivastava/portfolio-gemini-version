@@ -82,8 +82,8 @@ function App() {
       <div className="education-header">
         <h3>Rizvi College of Engineering, Bandra West, Mumbai, India</h3>
         <span className="education-date">2023 — 2027</span>
-        <p>Bachelor of Engineering (B.E) in Computer Engineering</p>
       </div>
+      <p>Bachelor of Engineering (B.E) in Computer Engineering</p>
       <p>CGPA: 7.67</p>
       </div>
 
@@ -110,6 +110,7 @@ function App() {
           <span>Python</span>
           <span>C++</span>
           <span>C#</span>
+          <span>JAVA</span>
           <span>JavaScript</span>
           <span>TypeScript</span>
           <span>SQL</span>
@@ -124,7 +125,6 @@ function App() {
           <span>React</span>
           <span>FastAPI</span>
           <span>HTML5 & CSS3</span>
-          <span>RESTful APIs</span>
         </div>
       </div>
 
