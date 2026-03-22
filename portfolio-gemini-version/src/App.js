@@ -46,6 +46,8 @@ function App() {
           <nav className="nav-menu">
             <a href="#home">Home</a>
             <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a> 
             <a href="#contact">Contact</a>
           </nav>
@@ -71,7 +73,73 @@ function App() {
           </div>
         </div>
       </section>
+{/* Education Section */}
+<section id="education" className="content-yellow">
+  <div className="content-inner reveal">
+    <h2 className="section-title">Education</h2>
+    <div className="white-content-box education-card">
+      <div className="education-header">
+        <h3>Bachelor of Engineering in Computer Engineering</h3>
+        <span className="education-date">2022 — 2026</span>
+      </div>
+      <p className="institution">Rizvi College of Engineering, Mumbai</p>
+      <ul className="project-list">
+        <li>Focused on core engineering principles and advanced software development</li>
+        <li>Participated in University-level technical competitions and Ideathons</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
+{/* Skills Section */}
+<section id="skills" className="content-yellow">
+  <div className="content-inner reveal">
+    <h2 className="section-title">Technical Skills</h2>
+    <div className="skills-container">
+      {/* Category: Programming */}
+      <div className="skill-category">
+        <h4>Languages</h4>
+        <div className="skill-badges">
+          <span>Python</span>
+          <span>C++</span>
+          <span>C#</span>
+          <span>JavaScript</span>
+          <span>SQL</span>
+        </div>
+      </div>
+
+      {/* Category: Web & Backend */}
+      <div className="skill-category">
+        <h4>Web Development</h4>
+        <div className="skill-badges">
+          <span>React</span>
+          <span>FastAPI</span>
+          <span>HTML5 & CSS3</span>
+          <span>RESTful APIs</span>
+        </div>
+      </div>
+
+      {/* Category: Data & AI */}
+      <div className="skill-category">
+        <h4>Data Science & ML</h4>
+        <div className="skill-badges">
+          <span>K-Means Clustering</span>
+        </div>
+      </div>
+
+      {/* Category: IoT & Systems */}
+      <div className="skill-category">
+        <h4>IoT & Embedded</h4>
+        <div className="skill-badges">
+          <span>Arduino</span>
+          <span>ESP32</span>
+          <span>Unity 2D</span>
+          <span>Embedded Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       <section id="projects" className="content-yellow">
         <div className="content-inner reveal">
           <h2 className="section-title">Projects</h2>

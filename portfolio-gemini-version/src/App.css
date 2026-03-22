@@ -187,3 +187,116 @@ html { scroll-behavior: smooth; }
   padding-top: 20px;
   margin-top: auto;
 }
+/* Education Styling */
+.education-card {
+  text-align: left;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.education-date {
+  font-weight: 700;
+  color: #ffcc29;
+  font-size: 1.2rem;
+}
+
+.institution {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Skills Layout */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.skill-category {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
+
+.skill-category h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #ffcc29;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Skill Badges */
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-badges span {
+  background: #f8f8f8;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.skill-badges span:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Responsive adjust for Education Header */
+@media (max-width: 600px) {
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .education-date {
+    margin-top: 5px;
+  }
+}
+.header-right-blob {
+  background-color: #ffcc29;
+  width: 55%; /* Increased from 45% to fit the extra links */
+  height: 120px;
+  border-bottom-left-radius: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 18px; /* Slightly tighter gap to keep everything on one line */
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.95rem; /* Dropped slightly from 1.1rem for better fit */
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
