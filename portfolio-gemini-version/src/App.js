@@ -73,21 +73,27 @@ function App() {
           </div>
         </div>
       </section>
-{/* Education Section */}
 <section id="education" className="content-yellow">
   <div className="content-inner reveal">
     <h2 className="section-title">Education</h2>
+    
+    {/* Engineering Degree */}
     <div className="white-content-box education-card">
       <div className="education-header">
-        <h3>Bachelor of Engineering in Computer Engineering</h3>
-        <span className="education-date">2022 — 2026</span>
+        <h3>Bachelor of Engineering (B.E) in Computer Engineering</h3>
+        <span className="education-date">2023 — 2027</span>
       </div>
       <p className="institution">Rizvi College of Engineering, Mumbai</p>
-      <ul className="project-list">
-        <li>Focused on core engineering principles and advanced software development</li>
-        <li>Participated in University-level technical competitions and Ideathons</li>
-      </ul>
-    </div>
+      </div>
+
+    {/* High School - Added this card */}
+    <div className="white-content-box education-card" style={{ marginTop: '30px' }}>
+      <div className="education-header">
+        <h3>10th Grade</h3>
+        <span className="education-date">2009 — 2020</span>
+      </div>
+      <p className="institution">St. Joseph's High School (CBSE)</p>
+     </div>
   </div>
 </section>
 
