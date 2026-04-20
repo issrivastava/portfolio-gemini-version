@@ -114,10 +114,8 @@ function App() {
           <span>JavaScript</span>
           <span>TypeScript</span>
           <span>SQL</span>
-          <span>LaTeX</span>
-          <span>Flutter</span>
-          <span>FastAPI</span>
           <span>PostgreSQL</span>
+          <span>LaTeX</span>
         </div>
       </div>
 
@@ -128,6 +126,7 @@ function App() {
           <span>React</span>
           <span>FastAPI</span>
           <span>HTML5 & CSS3</span>
+          <span>Flutter</span>
         </div>
       </div>
 
