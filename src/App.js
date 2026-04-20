@@ -210,7 +210,7 @@ function App() {
     <li>A cross-platform mobile application built with Flutter for the UI and FastAPI with PostgreSQL for the backend.</li>
     <li>Features include real-time search, recipe categorization, and a favorites system.</li>
     </ul>
-    <p className="tech-text">Technologies: Unity, C# </p>
+    <p className="tech-text">Technologies: Flutter, PostgreSQL, FastAPI </p>
   </div>
 
 </div>
