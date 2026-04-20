@@ -115,6 +115,9 @@ function App() {
           <span>TypeScript</span>
           <span>SQL</span>
           <span>LaTeX</span>
+          <span>Flutter</span>
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
         </div>
       </div>
 
@@ -199,6 +202,17 @@ function App() {
     </ul>
     <p className="tech-text">Technologies: TypeScript</p>
   </div>
+
+  {/* REFIN */}
+  <div className="project-card reveal">
+    <h3>REFIN - Full-Stack Recipe Management System</h3>
+    <ul className="project-list">
+    <li>A cross-platform mobile application built with Flutter for the UI and FastAPI with PostgreSQL for the backend.</li>
+    <li>Features include real-time search, recipe categorization, and a favorites system.</li>
+    </ul>
+    <p className="tech-text">Technologies: Unity, C# </p>
+  </div>
+
 </div>
         </div>
       </section>
