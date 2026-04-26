@@ -1,12 +1,14 @@
 @import url('https://fonts.cdnfonts.com/css/glacial-indifference');
 
 :root {
-  --primary: #ffcc29;
-  --dark: #1a1a1a;
-  --white: #ffffff;
-  --bg-gray: #f4f4f4;
-  --text-gray: #444;
-  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --accent: #FF9F1C; /* Vibrant Yellow-Orange */
+  --accent-hover: #E38600;
+  --dark: #1A1A1A;
+  --white: #FFFFFF;
+  --off-white: #F9F9F9;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -14,75 +16,63 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Glacial Indifference', sans-serif;
-  cursor: none; /* Keeps your JS custom cursor functional */
+  cursor: auto !important; /* Removed custom cursor feature */
 }
 
 html, body {
   scroll-behavior: smooth;
-  width: 100%;
-  overflow-x: hidden;
   background-color: var(--white);
+  color: var(--text-main);
+  overflow-x: hidden;
 }
 
-/* --- Custom Cursor --- */
-.custom-cursor {
-  width: 12px;
-  height: 12px;
-  background-color: var(--dark);
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference; /* Makes it visible on all backgrounds */
+/* --- Layout Structure (Removing the "Empty Space" Feel) --- */
+.main-container {
+  width: 100%;
 }
 
-/* --- Scroll Animations --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: var(--transition);
+.content-yellow {
+  padding: 100px 5%; /* Increased vertical padding to fill space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh; /* Ensures sections feel substantial */
 }
 
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
+/* Alternate backgrounds to define sections better */
+#about, #skills, #contact {
+  background-color: var(--off-white);
 }
 
-/* --- Header & Navigation --- */
+.content-inner {
+  width: 100%;
+  max-width: 1200px; /* Wider container to use more screen real estate */
+  margin: 0 auto;
+}
+
+/* --- Header & Nav --- */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+  padding: 20px 5%;
+  background: white;
+  border-bottom: 2px solid var(--accent);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 100px;
-  padding: 0 5%;
 }
 
 .header-left h1 {
   font-size: 1.8rem;
-  letter-spacing: -1px;
-  color: var(--dark);
   font-weight: 800;
-}
-
-.header-left p {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--text-gray);
+  color: var(--dark);
 }
 
 .header-right-blob {
-  background-color: var(--primary);
-  padding: 15px 40px;
-  border-radius: 50px; /* Transformed from a side-blob to a pill-style nav */
-  box-shadow: 0 10px 20px rgba(255, 204, 41, 0.3);
-  transition: var(--transition);
+  background-color: var(--accent);
+  padding: 12px 30px;
+  border-radius: 8px;
 }
 
 .nav-menu {
@@ -93,208 +83,187 @@ html, body {
 .nav-menu a {
   text-decoration: none;
   color: var(--dark);
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  position: relative;
 }
 
-.nav-menu a::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--dark);
-  transition: var(--transition);
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-/* --- Layout Sections --- */
-.content-yellow {
-  background-color: var(--primary);
-  margin: 20px;
-  border-radius: 40px;
-  padding: 80px 40px;
-  min-height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Hero Section Specifics */
+/* --- Hero Section (Fixing the Compressed Buttons) --- */
 .hero-page {
-  height: 80vh;
-  justify-content: center;
-  background: var(--primary) radial-gradient(circle at 70% 30%, rgba(255,255,255,0.4) 0%, transparent 60%);
+  background: linear-gradient(135deg, var(--accent) 0%, #FFB703 100%);
+  color: var(--dark);
+  text-align: center;
+  padding: 120px 20px;
 }
 
 .welcome-text {
-  font-size: clamp(3rem, 8vw, 5rem);
-  line-height: 0.9;
-  margin-bottom: 40px;
-  color: var(--dark);
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 30px;
 }
 
-/* --- Content Boxes (About/Education/Contact) --- */
-.white-content-box, .education-card {
-  background: var(--white);
-  padding: 40px;
-  border-radius: 30px;
-  max-width: 800px;
-  width: 100%;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  line-height: 1.7;
+.hero-button-container {
+  display: flex;
+  gap: 25px; /* Significant space between buttons */
+  justify-content: center;
+  flex-wrap: wrap; /* Prevents squishing on small screens */
+  margin-top: 20px;
+}
+
+.hero-btn {
+  background: var(--dark);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
   font-size: 1.1rem;
+  transition: transform 0.2s, background 0.2s;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.hero-btn:hover {
+  background: #000;
+  transform: translateY(-3px);
+}
+
+/* --- Unique Project Cards --- */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 50px;
-  text-transform: uppercase;
+  text-align: center;
 }
 
-/* --- Projects Grid (The "Bento" look) --- */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
   width: 100%;
-  max-width: 1200px;
 }
 
 .project-card {
-  background: var(--white);
-  padding: 35px;
-  border-radius: 30px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  border-top: 8px solid var(--accent); /* Unique orange accent at the top */
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
   display: flex;
   flex-direction: column;
-  transition: var(--transition);
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
 }
 
 .project-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 15px;
   color: var(--dark);
 }
 
-.project-list li {
-  font-size: 0.95rem;
-  color: var(--text-gray);
-  margin-bottom: 10px;
+.project-list {
   list-style: none;
+  margin-bottom: 20px;
+}
+
+.project-list li {
+  margin-bottom: 10px;
   padding-left: 20px;
   position: relative;
+  color: var(--text-muted);
+  line-height: 1.5;
 }
 
 .project-list li::before {
-  content: '→';
+  content: "●";
+  color: var(--accent);
   position: absolute;
   left: 0;
-  color: var(--primary);
-  font-weight: 900;
+  font-size: 0.8rem;
+  top: 2px;
 }
 
 .tech-text {
   margin-top: auto;
-  padding-top: 20px;
-  font-size: 0.8rem;
   font-weight: 800;
-  text-transform: uppercase;
-  color: var(--primary);
-  background: var(--dark);
-  padding: 10px 20px;
-  border-radius: 10px;
+  color: var(--accent-hover);
+  background: #FFF4E6;
+  padding: 8px 15px;
+  border-radius: 6px;
   display: inline-block;
 }
 
-/* --- Skills Badges --- */
-.skill-category {
-  background: var(--white);
-  padding: 30px;
-  border-radius: 25px;
-  margin-bottom: 20px;
+/* --- Content Boxes (About / Education) --- */
+.white-content-box, .education-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--off-white);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.education-date {
+  color: var(--accent-hover);
+  font-weight: 800;
+}
+
+/* --- Skills Layout --- */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
   width: 100%;
 }
 
-.skill-badges span {
-  background: var(--bg-gray);
-  padding: 8px 18px;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  transition: var(--transition);
-}
-
-.skill-badges span:hover {
-  background: var(--dark);
-  color: var(--primary);
-}
-
-/* --- Buttons --- */
-.hero-btn, .message-btn {
-  background: var(--dark);
-  color: var(--white);
-  padding: 15px 35px;
+.skill-category {
+  background: white;
+  padding: 30px;
   border-radius: 15px;
-  border: none;
-  font-weight: 800;
-  text-transform: uppercase;
-  transition: var(--transition);
-  text-decoration: none;
+  box-shadow: var(--shadow);
 }
 
-.hero-btn:hover, .message-btn:hover {
-  background: var(--white);
-  color: var(--dark);
-  transform: scale(1.05);
+.skill-badges span {
+  background: var(--off-white);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid #eee;
 }
 
 /* --- Footer --- */
 .site-footer {
+  background: var(--dark);
+  color: white;
   padding: 60px 20px;
-  background: var(--white);
   text-align: center;
 }
 
 .footer-link {
-  color: var(--dark);
-  font-weight: 800;
-  margin: 0 15px;
+  color: var(--accent);
   text-decoration: none;
-  font-size: 0.9rem;
+  margin: 0 15px;
+  font-weight: 700;
 }
 
-/* --- Responsive Layout --- */
-@media (max-width: 900px) {
-  .site-header {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
-  .header-right-blob {
-    width: 100%;
-    margin-top: 15px;
-  }
-  .nav-menu {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .content-yellow {
-    margin: 10px;
-    padding: 40px 20px;
-  }
-  .welcome-text { font-size: 3rem; }
-  * { cursor: auto !important; }
-  .custom-cursor { display: none; }
+/* --- Mobile Fixes --- */
+@media (max-width: 768px) {
+  .welcome-text { font-size: 2.5rem; }
+  .site-header { flex-direction: column; height: auto; gap: 15px; }
+  .header-right-blob { width: 100%; text-align: center; }
+  .content-yellow { padding: 60px 20px; }
 }
