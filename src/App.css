@@ -12,11 +12,13 @@
   --card-border: 12px solid var(--accent);
 }
 
+/* --- Base Reset --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Glacial Indifference', sans-serif;
+  cursor: auto !important;
 }
 
 html, body {
@@ -26,7 +28,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- THE CLASSY NAVIGATION BAR --- */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -55,18 +57,16 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* CHANGED: Orange border moved to the TOP to match cards */
 .header-right-blob {
   background-color: var(--white);
-  padding: 12px 40px;
-  border-radius: 20px;
-  border-top: 6px solid var(--accent); /* Matches your card design */
-  box-shadow: var(--shadow);
+  padding: 10px 10px;
+  border-radius: 15px;
+  border-bottom: 4px solid var(--accent); 
 }
 
 .nav-menu {
   display: flex;
-  gap: 35px; /* Spacious separation */
+  gap: 40px; 
   align-items: center;
 }
 
@@ -74,24 +74,41 @@ html, body {
   text-decoration: none;
   color: var(--dark);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
   color: var(--accent-dark);
 }
 
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
 /* --- HERO SECTION --- */
 .hero-page {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: radial-gradient(circle at center, var(--accent-soft) 0%, var(--white) 100%);
+  padding: 0 10%;
 }
 
 .welcome-text {
@@ -100,12 +117,14 @@ html, body {
   letter-spacing: -4px;
   line-height: 0.85;
   margin-bottom: 60px;
+  color: var(--dark);
 }
 
 .hero-button-container {
   display: flex;
   gap: 30px;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-btn {
@@ -116,27 +135,48 @@ html, body {
   text-decoration: none;
   font-weight: 800;
   font-size: 1.3rem;
-  border: none;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 3px solid var(--dark);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .hero-btn:hover {
   background: var(--accent);
+  border-color: var(--accent);
   color: var(--dark);
   transform: translateY(-10px);
 }
 
-/* --- THE UNIVERSAL CARD DESIGN (12px Top Border) --- */
+/* --- SECTION WRAPPERS --- */
 .content-yellow {
   padding: 140px 8%;
   display: flex;
   justify-content: center;
 }
 
+/* Alternating Backgrounds to kill empty space */
 #about, #experience, #skills, #contact {
   background-color: var(--accent-soft);
 }
 
+#education, #projects {
+  background-color: var(--white);
+}
+
+.content-inner {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 70px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+/* --- THE UNIVERSAL CARD DESIGN (12px Border) --- */
 .white-content-box, 
 .education-card, 
 .project-card, 
@@ -151,16 +191,35 @@ html, body {
   width: 100%;
 }
 
-.white-content-box:hover, .education-card:hover, .project-card:hover {
+.white-content-box:hover, 
+.education-card:hover, 
+.project-card:hover, 
+.skill-category:hover {
   transform: translateY(-12px);
 }
 
-/* --- TYPOGRAPHY & GRIDS --- */
-.section-title { font-size: 4rem; font-weight: 800; margin-bottom: 70px; text-align: center; }
-h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; }
-.institution { font-size: 1.4rem; font-weight: 700; color: var(--accent-dark); margin-bottom: 20px; }
-p { font-size: 1.4rem; line-height: 1.8; color: var(--text-secondary); }
+/* --- CARD TYPOGRAPHY --- */
+h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--dark);
+}
 
+.institution {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* --- GRIDS --- */
 .projects-grid, .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -169,7 +228,7 @@ p { font-size: 1.4rem; line-height: 1.8; color: var(--text-secondary); }
 
 .project-list li {
   list-style: none;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   padding-left: 30px;
   position: relative;
   font-size: 1.2rem;
@@ -186,6 +245,8 @@ p { font-size: 1.4rem; line-height: 1.8; color: var(--text-secondary); }
 .tech-text {
   margin-top: 30px;
   font-weight: 800;
+  font-size: 1rem;
+  color: var(--dark);
   background: var(--accent-soft);
   padding: 12px 25px;
   border-radius: 10px;
@@ -193,7 +254,45 @@ p { font-size: 1.4rem; line-height: 1.8; color: var(--text-secondary); }
   border: 1px solid var(--accent);
 }
 
-/* --- CONTACT SECTION --- */
+/* --- SKILL BADGES --- */
+.skill-badges span {
+  background: var(--accent-soft);
+  padding: 14px 24px;
+  border-radius: 15px;
+  font-weight: 800;
+  margin: 8px;
+  display: inline-block;
+  border: 2px solid var(--accent);
+}
+
+/* --- EDUCATION/EXPERIENCE HEADER --- */
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.education-date {
+  font-weight: 800;
+  color: var(--white);
+  background: var(--dark);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+}
+
+/* --- ELEGANT CONTACT SECTION --- */
+.contact-box {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .message-btn {
   background: var(--dark) !important;
   color: var(--white) !important;
@@ -202,35 +301,50 @@ p { font-size: 1.4rem; line-height: 1.8; color: var(--text-secondary); }
   font-size: 1.4rem !important;
   font-weight: 800;
   text-transform: uppercase;
-  margin-top: 30px;
+  letter-spacing: 3px;
+  border: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 20px;
+  transition: all 0.4s ease;
+  margin-top: 30px;
 }
 
-.message-btn::before { content: "✉"; font-size: 2rem; }
+.message-btn::before {
+  content: "✉";
+  font-size: 2rem;
+}
 
 .message-btn:hover {
   background: var(--accent) !important;
   color: var(--dark) !important;
   transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 183, 3, 0.4);
 }
 
 /* --- FOOTER --- */
 .site-footer {
   background: var(--dark);
   color: white;
-  padding: 100px 5%;
+  padding: 120px 8%;
   text-align: center;
 }
 
-.footer-link { color: var(--accent); text-decoration: none; margin: 0 20px; font-weight: 800; }
+.footer-link {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 25px;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE FIXES --- */
 @media (max-width: 900px) {
-  .site-header { flex-direction: column; gap: 20px; }
-  .header-right-blob { width: 100%; text-align: center; border-top: 4px solid var(--accent); }
-  .nav-menu { gap: 15px; justify-content: center; flex-wrap: wrap; }
-  .welcome-text { font-size: 3rem; }
+  .site-header { padding: 30px 5%; flex-direction: column; gap: 25px; }
+  .header-right-blob { width: 100%; border-bottom: none; border-left: 4px solid var(--accent); }
+  .nav-menu { gap: 20px; justify-content: center; flex-wrap: wrap; }
+  .welcome-text { font-size: 3.5rem; letter-spacing: -1px; }
+  .hero-button-container { flex-direction: column; width: 100%; }
+  .hero-btn { width: 100%; }
 }
