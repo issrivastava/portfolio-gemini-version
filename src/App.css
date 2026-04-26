@@ -18,7 +18,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Glacial Indifference', sans-serif;
-  cursor: auto !important; /* Explicitly removed custom cursor */
+  cursor: auto !important;
 }
 
 html, body {
@@ -28,18 +28,18 @@ html, body {
   overflow-x: hidden;
 }
 
-/* --- NEW NAVIGATION DESIGN --- */
+/* --- THE CLASSY NAVIGATION BAR --- */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px 8%;
   background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .header-left h1 {
@@ -57,17 +57,16 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* Redesigned Nav "Blob" into an elegant floating pill */
 .header-right-blob {
-  background-color: var(--accent);
-  padding: 15px 40px;
-  border-radius: 100px;
-  box-shadow: 0 10px 25px rgba(255, 183, 3, 0.2);
+  background-color: var(--white);
+  padding: 10px 10px;
+  border-radius: 15px;
+  border-bottom: 4px solid var(--accent); 
 }
 
 .nav-menu {
   display: flex;
-  gap: 35px; /* Significant spacing between links */
+  gap: 40px; 
   align-items: center;
 }
 
@@ -75,18 +74,33 @@ html, body {
   text-decoration: none;
   color: var(--dark);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
 }
 
 .nav-menu a:hover {
-  color: var(--white);
-  transform: translateY(-2px);
+  color: var(--accent-dark);
 }
 
-/* --- HERO SECTION (Centered & Classy) --- */
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* --- HERO SECTION --- */
 .hero-page {
   height: calc(100vh - 120px);
   display: flex;
@@ -98,7 +112,7 @@ html, body {
 }
 
 .welcome-text {
-  font-size: clamp(3.5rem, 12vw, 7rem); /* Extra large & Bold */
+  font-size: clamp(3.5rem, 12vw, 7.5rem); 
   font-weight: 800;
   letter-spacing: -4px;
   line-height: 0.85;
@@ -123,6 +137,7 @@ html, body {
   font-size: 1.3rem;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 3px solid var(--dark);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .hero-btn:hover {
@@ -130,7 +145,6 @@ html, body {
   border-color: var(--accent);
   color: var(--dark);
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(255, 183, 3, 0.3);
 }
 
 /* --- SECTION WRAPPERS --- */
@@ -140,9 +154,13 @@ html, body {
   justify-content: center;
 }
 
-/* Background alternating to fill empty space feel */
-#about, #skills, #contact {
+/* Alternating Backgrounds to kill empty space */
+#about, #experience, #skills, #contact {
   background-color: var(--accent-soft);
+}
+
+#education, #projects {
+  background-color: var(--white);
 }
 
 .content-inner {
@@ -158,18 +176,18 @@ html, body {
   letter-spacing: -2px;
 }
 
-/* --- UNIVERSAL CARD DESIGN --- */
+/* --- THE UNIVERSAL CARD DESIGN (12px Border) --- */
 .white-content-box, 
 .education-card, 
 .project-card, 
 .skill-category {
   background: var(--white);
-  padding: 60px; /* High-end spaciousness */
+  padding: 60px;
   border-radius: 35px;
   border-top: var(--card-border);
   box-shadow: var(--shadow);
   margin-bottom: 50px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease;
   width: 100%;
 }
 
@@ -178,24 +196,30 @@ html, body {
 .project-card:hover, 
 .skill-category:hover {
   transform: translateY(-12px);
-  box-shadow: 0 40px 70px -15px rgba(0, 0, 0, 0.12);
 }
 
 /* --- CARD TYPOGRAPHY --- */
 h3 {
   font-size: 2.2rem;
   font-weight: 800;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   color: var(--dark);
 }
 
+.institution {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 20px;
+}
+
 p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   color: var(--text-secondary);
 }
 
-/* --- PROJECTS & SKILLS GRIDS --- */
+/* --- GRIDS --- */
 .projects-grid, .skills-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -238,22 +262,15 @@ p {
   font-weight: 800;
   margin: 8px;
   display: inline-block;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  border: 2px solid var(--accent);
 }
 
-.skill-badges span:hover {
-  border-color: var(--accent);
-  background: var(--white);
-  transform: scale(1.1);
-}
-
-/* --- EDUCATION HEADER --- */
+/* --- EDUCATION/EXPERIENCE HEADER --- */
 .education-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   flex-wrap: wrap;
 }
 
@@ -276,22 +293,6 @@ p {
   align-items: center;
 }
 
-.contact-details {
-  margin-bottom: 40px;
-  width: 100%;
-}
-
-.contact-details p {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--dark);
-  padding: 20px 0;
-}
-
-.contact-details p:first-child {
-  border-bottom: 2px solid var(--accent-soft);
-}
-
 .message-btn {
   background: var(--dark) !important;
   color: var(--white) !important;
@@ -306,11 +307,12 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease;
+  margin-top: 30px;
 }
 
 .message-btn::before {
-  content: "✉"; /* Elegant Envelope Symbol */
+  content: "✉";
   font-size: 2rem;
 }
 
@@ -335,25 +337,14 @@ p {
   margin: 0 25px;
   font-weight: 800;
   font-size: 1.1rem;
-  text-transform: uppercase;
 }
 
-.footer-credit {
-  margin-top: 50px;
-  font-size: 1rem;
-  opacity: 0.3;
-  letter-spacing: 3px;
-}
-
-/* --- RESPONSIVE ADJUSTMENTS --- */
+/* --- RESPONSIVE FIXES --- */
 @media (max-width: 900px) {
-  .site-header { flex-direction: column; gap: 25px; padding: 30px 5%; }
-  .header-right-blob { width: 100%; text-align: center; }
-  .nav-menu { gap: 15px; justify-content: center; }
+  .site-header { padding: 30px 5%; flex-direction: column; gap: 25px; }
+  .header-right-blob { width: 100%; border-bottom: none; border-left: 4px solid var(--accent); }
+  .nav-menu { gap: 20px; justify-content: center; flex-wrap: wrap; }
   .welcome-text { font-size: 3.5rem; letter-spacing: -1px; }
   .hero-button-container { flex-direction: column; width: 100%; }
   .hero-btn { width: 100%; }
-  .section-title { font-size: 2.8rem; }
-  .projects-grid, .skills-container { grid-template-columns: 1fr; }
-  .white-content-box, .education-card, .project-card, .skill-category { padding: 40px 25px; }
 }

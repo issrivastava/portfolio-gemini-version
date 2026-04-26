@@ -98,6 +98,24 @@ function App() {
   </div>
 </section>
 
+{/* Experience Section */}
+<section id="experience" className="content-yellow">
+  <div className="content-inner reveal">
+    <h2 className="section-title">Experience</h2>
+    <div className="white-content-box education-card">
+      <div className="education-header">
+        <h3>Machine Learning Intern</h3>
+        <span className="education-date">May 2026 — Present</span>
+      </div>
+      <p className="institution">testAIng.com · Internship</p>
+      <ul className="project-list" style={{marginTop: '20px'}}>
+        <li>Assisting in the development and optimization of ML models.</li>
+        <li>Collaborating on data preprocessing and feature engineering tasks.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 {/* Skills Section */}
 <section id="skills" className="content-yellow">
   <div className="content-inner reveal">
@@ -108,13 +126,12 @@ function App() {
         <h4>Languages</h4>
         <div className="skill-badges">
           <span>Python</span>
+          <span>C</span>
           <span>C++</span>
           <span>C#</span>
           <span>JAVA</span>
           <span>JavaScript</span>
           <span>TypeScript</span>
-          <span>SQL</span>
-          <span>PostgreSQL</span>
           <span>LaTeX</span>
         </div>
       </div>
@@ -132,8 +149,10 @@ function App() {
 
       {/* Category: Data & AI */}
       <div className="skill-category">
-        <h4>Data Science & ML</h4>
+        <h4>DataBase & Data Science - ML</h4>
         <div className="skill-badges">
+          <span>SQL</span>
+          <span>PostgreSQL</span>
           <span>K-Means Clustering</span>
         </div>
       </div>
