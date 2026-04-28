@@ -116,29 +116,41 @@ function App() {
             <div className="skill-category">
               <h4>Languages</h4>
               <div className="skill-badges">
-                <span>Python</span> <span>C++</span> <span>C#</span> <span>JAVA</span>
-                <span>JavaScript</span> <span>Dart</span> <span>LaTeX</span>
+                <span>Python</span> 
+                <span>C++</span> 
+                <span>C#</span> 
+                <span>JAVA</span>
+                <span>JavaScript</span> 
+                <span>Dart</span> 
+                <span>LaTeX</span>
               </div>
             </div>
 
             <div className="skill-category">
               <h4>Web Development</h4>
               <div className="skill-badges">
-                <span>React</span> <span>FastAPI</span> <span>HTML5 & CSS3</span> <span>Flutter</span>
+                <span>React</span> 
+                <span>FastAPI</span> 
+                <span>HTML5 & CSS3</span> 
+                <span>Flutter</span>
               </div>
             </div>
 
             <div className="skill-category">
               <h4>DataBase</h4>
               <div className="skill-badges">
-                <span>SQL</span> <span>PostgreSQL</span>
+                <span>SQL</span> 
+                <span>PostgreSQL</span>
               </div>
             </div>
 
             <div className="skill-category">
               <h4>IoT & Embedded</h4>
               <div className="skill-badges">
-                <span>Arduino</span> <span>ESP32</span> <span>Unity 2D</span> <span>Blynk App</span>
+                <span>Arduino</span> 
+                <span>ESP32</span> 
+                <span>Unity 2D</span> 
+                <span>Blynk App</span>
               </div>
             </div>
           </div>
