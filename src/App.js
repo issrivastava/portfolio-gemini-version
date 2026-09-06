@@ -55,6 +55,7 @@ function App() {
           <h2 className="welcome-text">Welcome to my website</h2>
           <div className="hero-button-container">
             <a href="https://github.com/issrivastava" target="_blank" rel="noreferrer" className="hero-btn">GitHub</a>
+            <a href="https://medium.com/@issrivastava" target="_blank" rel="noreferrer" className="hero-btn">Medium</a>
             <a href="https://www.linkedin.com/in/issrivastava46/" target="_blank" rel="noreferrer" className="hero-btn">LinkedIn</a>
             <button onClick={handleResumeDownload} className="hero-btn">Resume</button>
           </div>
@@ -261,6 +262,7 @@ function App() {
         <div className="footer-content">
           <div className="footer-links-container">
             <a href="https://github.com/issrivastava" target="_blank" rel="noreferrer" className="footer-link">GitHub</a>
+            <a href="https://medium.com/@issrivastava" target="_blank" rel="noreferrer" className="footer-link">Medium</a>
             <a href="https://www.linkedin.com/in/issrivastava46/" target="_blank" rel="noreferrer" className="footer-link">LinkedIn</a>
             <a href={`mailto:${emailAddress}`} className="footer-link">Email</a>
           </div>
