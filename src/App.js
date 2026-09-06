@@ -79,7 +79,7 @@ function App() {
               <span className="education-date">2023 — 2027</span>
             </div>
             <p>Bachelor of Engineering (B.E) in Computer Engineering</p>
-            <p>CGPA: 7.67</p>
+            <p>CGPA: 7.97</p>
           </div>
 
           <div className="white-content-box education-card" style={{ marginTop: '30px' }}>
@@ -110,52 +110,71 @@ function App() {
       </section>
 
       <section id="skills" className="content-yellow">
-        <div className="content-inner reveal">
-          <h2 className="section-title">Technical Skills</h2>
-          <div className="skills-container">
-            <div className="skill-category">
-              <h4>Languages</h4>
-              <div className="skill-badges">
-                <span>Python</span> 
-                <span>C++</span> 
-                <span>C#</span> 
-                <span>JAVA</span>
-                <span>JavaScript</span> 
-                <span>Dart</span> 
-                <span>LaTeX</span>
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h4>Web Development</h4>
-              <div className="skill-badges">
-                <span>React</span> 
-                <span>FastAPI</span> 
-                <span>HTML5 & CSS3</span> 
-                <span>Flutter</span>
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h4>DataBase</h4>
-              <div className="skill-badges">
-                <span>SQL</span> 
-                <span>PostgreSQL</span>
-              </div>
-            </div>
-
-            <div className="skill-category">
-              <h4>IoT & Embedded</h4>
-              <div className="skill-badges">
-                <span>Arduino</span> 
-                <span>ESP32</span> 
-                <span>Unity 2D</span> 
-                <span>Blynk App</span>
-              </div>
-            </div>
-          </div>
+  <div className="content-inner reveal">
+    <h2 className="section-title">Technical Skills</h2>
+    <div className="skills-container">
+      <div className="skill-category">
+        <h4>Languages</h4>
+        <div className="skill-badges">
+          <span>Python</span>
+          <span>C++</span>
+          <span>Dart</span>
+          <span>JavaScript</span>
+          <span>C#</span>
+          <span>Java</span>
+          <span>HTML5 & CSS3</span>
         </div>
-      </section>
+      </div>
+
+      <div className="skill-category">
+        <h4>Web & Mobile Development</h4>
+        <div className="skill-badges">
+          <span>React</span>
+          <span>FastAPI</span>
+          <span>Flutter</span>
+          <span>RESTful APIs</span>
+        </div>
+      </div>
+
+      <div className="skill-category">
+        <h4>AI, ML & Computer Vision</h4>
+        <div className="skill-badges">
+          <span>OpenCV</span>
+          <span>MediaPipe</span>
+          <span>Machine Learning</span>
+        </div>
+      </div>
+
+      <div className="skill-category">
+        <h4>Databases</h4>
+        <div className="skill-badges">
+          <span>PostgreSQL</span>
+          <span>SQL</span>
+        </div>
+      </div>
+
+      <div className="skill-category">
+        <h4>IoT & Embedded Systems</h4>
+        <div className="skill-badges">
+          <span>Arduino</span>
+          <span>ESP32</span>
+          <span>Sensor Interfacing</span>
+          <span>Blynk</span>
+        </div>
+      </div>
+
+      <div className="skill-category">
+        <h4>Tools & Platforms</h4>
+        <div className="skill-badges">
+          <span>Git & GitHub</span>
+          <span>VS Code</span>
+          <span>Android Studio</span>
+          <span>Unity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section id="projects" className="content-yellow">
         <div className="content-inner reveal">
@@ -200,6 +219,17 @@ function App() {
                 <li>Visualized clustering results for improved business insights</li>
               </ul>
               <p className="tech-text">Technologies: TypeScript</p>
+            </div>
+
+            <div className="project-card reveal">
+              <h3>RoboGrip: Vision-Based Gesture Control Robotic Arm</h3>
+              <ul className="project-list">
+                <li>Engineered a real-time, vision-based Human–Robot Interaction (HRI) system to manipulate a multi-DOF robotic arm using dynamic and static hand gestures.</li>
+                <li>Integrated safety-critical layers including temporal validation, confidence scoring thresholds, workspace boundaries, and an emergency failsafe to prevent misfires.</li>
+                <li>Implemented hand landmark detection and ML-based classification to map gestures to motor commands (movement, rotation, gripping, release).</li>
+                <li>Interfaced host vision pipeline with a microcontroller via serial communication to achieve low-latency actuation and high command execution accuracy across varied lighting environments.</li>
+              </ul>
+              <p className="tech-text">Technologies: Python, OpenCV, MediaPipe, Machine Learning, Microcontrollers (Arduino/ESP32), Serial Communication, Servo Actuators.</p>
             </div>
 
             <div className="project-card reveal">
